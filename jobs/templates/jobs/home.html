@@ -1,0 +1,109 @@
+<!--<h1>My name is Anthony King and I'm currently an Linux Admin with inspirations of being an <br/> DevOps Engineer and Software Engineer</h1> -->
+
+
+<!doctype html>
+<html lang="en">
+
+  {% load staticfiles %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Anthony King, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Anthony King </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+   
+  </head>
+  <body>
+    <header>
+       
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container"> 
+    <a class="navbar-brand" href="{% url 'home' %}">
+    <i class="fas fa-home fa-2x"></i> </a>
+       
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+     </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+     <div class="navbar-nav ml-auto"> <!-- addes nav fields to the right of page -->
+          <a class="nav-item nav-link active" href="{%static 'resume.pdf'%}">Resume</a> <!-- active = light disable = dark -->
+          <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a> <!--url , name =allblog , blog/url.py-->
+          <a class="nav-item nav-link" href="https://github.com/nothing2aKING"><i class="fab fa-github fa-2x"></i></a>
+          <a class="nav-item nav-link" href="https://www.linkedin.com/in/anthony-king-b0035a136/"><i class="fab fa-linkedin fa-2x"></i></a>              
+      </div>
+      </div>
+      </div>
+     </nav>
+
+       
+       
+</header>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+        <br/>
+        <br/>
+      <h1 class="jumbotron-heading"> Anthony King </h1>
+      <p class="lead text-muted">I'm currently an Linux Admin with inspirations of being an <br/> DevOps Engineer and Software Engineer</p>
+      <p>
+          <img src="{% static 'headshot_pro.png'%}" style= "height:300px; width: 300px; border-radius:50%"/>
+        <br/>
+        <br/>
+        <a href="https://www.linkedin.com/in/anthony-king-b0035a136/" class="btn btn-primary my-2">LinkedIn</a>
+        <a href="mailto:amking15@gmail.com" class="btn btn-secondary my-2">Email Me</a>
+      
+        
+      </p>
+    </div>
+  </section>
+  
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+         {% for job in jobs.all %}
+         <a href="{{job.github}}">
+         <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+            <img class=" card-img-top" src="{{job.image.url}}" />
+            <div class="card-body">
+              <p class="card-text">{{job.summary }}</p>
+            </div>
+              
+              <a href="{{job.github}}" class="btn btn-primary"><i class="fab fa-github fa-2x"></i></a>
+            </div>            
+            
+            </div>
+          </a>
+          {% endfor %}
+        
+        </div>
+
+        <section class="jumbotron text-center">
+           
+          </section>
+
+</main>
+
+<footer class="test-muted">
+    <div class="container text-center">
+    <p> Copyright © {%now "Y"%} by Anthony King</p> 
+    </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="https://kit.fontawesome.com/5a78b71307.js" crossorigin="anonymous"></script>
